@@ -42,20 +42,7 @@ export const CalendarTest = () => {
           ))}
         </div>
 
-        {/* Debug Info */}
-        <div className="mt-8 text-center">
-          <div className="bg-green-900/50 border border-green-600 rounded-lg p-4 max-w-md mx-auto">
-            <div className="text-green-400 font-bold">DEBUG INFO</div>
-            <div className="text-green-300 text-sm mt-2">
-              Screen: <span className="block sm:hidden">MOBILE</span>
-              <span className="hidden sm:block md:hidden">TABLET</span>
-              <span className="hidden md:block">DESKTOP</span>
-            </div>
-            <div className="text-green-300 text-sm">
-              Races rendered: {testRaces.length}
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

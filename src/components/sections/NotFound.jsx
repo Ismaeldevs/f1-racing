@@ -43,15 +43,15 @@ export const NotFound = ({ errorType = ErrorTypes.PAGE_NOT_FOUND, customMessage 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Racing Lines */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10 overflow-hidden">
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute h-0.5 bg-gradient-to-r from-transparent via-red-600 to-transparent"
               style={{
                 top: `${15 + i * 12}%`,
-                width: '150%',
-                left: '-25%'
+                width: '100%',
+                left: '0'
               }}
               animate={{
                 x: ['-100%', '100%']
@@ -150,12 +150,12 @@ export const NotFound = ({ errorType = ErrorTypes.PAGE_NOT_FOUND, customMessage 
           {/* Racing Car Animation */}
           <motion.div
             variants={fadeInUp}
-            className="mb-12 relative"
+            className="mb-12 relative overflow-hidden"
           >
             <motion.div
               className="text-6xl sm:text-8xl"
               animate={{ 
-                x: ['-100vw', '100vw'],
+                x: ['-50px', 'calc(100vw - 100px)'],
                 rotate: [0, 5, -5, 0]
               }}
               transition={{
@@ -165,7 +165,7 @@ export const NotFound = ({ errorType = ErrorTypes.PAGE_NOT_FOUND, customMessage 
             >
               🏎️
             </motion.div>
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="text-sm text-gray-500 bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">
                 Buscando la ruta correcta...
               </div>

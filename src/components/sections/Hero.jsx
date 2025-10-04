@@ -13,15 +13,15 @@ export const Hero = () => {
       {/* Background Video/Image Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Animated Racing Lines */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 overflow-hidden">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute h-0.5 bg-gradient-to-r from-transparent via-red-600 to-transparent"
               style={{
                 top: `${20 + i * 15}%`,
-                width: '200%',
-                left: '-50%'
+                width: '100%',
+                left: '0'
               }}
               animate={{
                 x: ['-100%', '100%']
@@ -157,9 +157,9 @@ export const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Side Decorations */}
+      {/* Side Decorations - Hidden on mobile to prevent overflow */}
       <motion.div
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2"
+        className="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/4"
         variants={fadeInLeft}
         initial="initial"
         animate={inView ? "animate" : "initial"}
@@ -168,7 +168,7 @@ export const Hero = () => {
       </motion.div>
 
       <motion.div
-        className="absolute right-0 bottom-1/4 transform translate-x-1/2"
+        className="hidden lg:block absolute right-0 bottom-1/4 transform translate-x-1/4"
         variants={fadeInRight}
         initial="initial"
         animate={inView ? "animate" : "initial"}

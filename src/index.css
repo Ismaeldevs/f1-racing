@@ -5,8 +5,13 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 .font-racing {
@@ -154,6 +159,30 @@ a:focus-visible {
   
   .glow-green {
     box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+  }
+}
+
+/* Prevent horizontal overflow globally */
+.overflow-x-hidden-force {
+  overflow-x: hidden !important;
+}
+
+/* Ensure no elements cause horizontal scrolling */
+section, div, main {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  /* Hide elements that might cause overflow on small screens */
+  .hide-mobile-overflow {
+    display: none;
   }
 }
 

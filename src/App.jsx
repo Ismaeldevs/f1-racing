@@ -25,7 +25,7 @@ const LandingPage = () => (
     <Navbar />
     
     {/* Main Content */}
-    <main>
+    <main className="overflow-x-hidden">
       {/* Hero Section */}
       <Hero />
       
@@ -53,7 +53,7 @@ const LandingPage = () => (
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-black text-white overflow-x-hidden">
         <Routes>
           {/* Main Landing Page */}
           <Route path="/" element={<LandingPage />} />
