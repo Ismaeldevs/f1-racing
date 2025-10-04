@@ -27,9 +27,16 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (sectionId) => {
-    scrollToSection(sectionId);
-    setIsMobileMenuOpen(false);
+  const handleNavClick = (sectionId) => {    
+    // Cerrar el menú móvil primero
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+    
+    // Pequeño delay para que la animación del menú termine
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, isMobileMenuOpen ? 300 : 0);
   };
 
   return (
@@ -105,7 +112,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-white p-2 cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
           >
@@ -117,7 +124,7 @@ export const Navbar = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="lg:hidden border-t border-red-600/20"
+              className="lg:hidden border-t border-red-600/20 cursor-pointer"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -128,16 +135,21 @@ export const Navbar = () => {
                   <motion.button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className="w-full text-left text-white/80 hover:text-white hover:bg-red-600/10 transition-all duration-200 py-4 px-4 text-lg font-medium rounded-lg min-h-[48px] flex items-center"
+                    className="w-full text-left text-white/80 hover:text-white hover:bg-red-600/10 active:bg-red-600/20 transition-all duration-200 py-4 px-4 text-lg font-medium rounded-lg min-h-[48px] flex items-center touch-manipulation"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     {item.label}
                   </motion.button>
                 ))}
                 <motion.button
-                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-lg font-medium mt-6 min-h-[48px] transition-all duration-200"
+                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-lg font-medium mt-6 min-h-[48px] transition-all duration-200 cursor-pointer"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.open('https://f1tv.formula1.com/', '_blank');
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}

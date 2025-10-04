@@ -132,7 +132,7 @@ export const CalendarMobile = () => {
   console.log('Next race index:', nextRaceIndex);
 
   return (
-    <section className="py-8 bg-black text-white">
+    <section id="calendar" className="py-8 bg-black text-white">
       <div className="container mx-auto px-4">
         {/* Header simple */}
         <div className="text-center mb-8">
@@ -197,13 +197,7 @@ export const CalendarMobile = () => {
           </div>
         </div>
 
-        {/* Debug info para verificar funcionamiento */}
-        <div className="mt-6 p-4 bg-green-900/30 border border-green-600/50 rounded-lg">
-          <div className="text-green-400 text-sm font-bold text-center">✅ CALENDARIO MÓVIL ACTIVO</div>
-          <div className="text-green-300 text-xs text-center mt-1">
-            Races loaded: {races.length} | Screen: Mobile
-          </div>
-        </div>
+
       </div>
     </section>
   );
