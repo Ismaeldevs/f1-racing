@@ -93,20 +93,7 @@ export const Footer = () => {
               Vive la velocidad como nunca antes.
             </p>
 
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  className={`p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-all duration-300 ${social.color} hover:scale-110`}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
+
           </motion.div>
 
           {/* Navigation Links */}
@@ -129,26 +116,7 @@ export const Footer = () => {
             </nav>
           </motion.div>
 
-          {/* Quick Info */}
-          <motion.div variants={fadeInUp} className="lg:col-span-1">
-            <h4 className="text-xl font-bold text-white mb-6">Contacto</h4>
-            <div className="space-y-4">
-              {quickInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center space-x-3 text-gray-400"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <info.icon className="w-5 h-5 text-red-600" />
-                  <span>{info.text}</span>
-                </motion.div>
-              ))}
-            </div>
 
-
-          </motion.div>
 
           {/* Latest Updates */}
           <motion.div variants={fadeInRight} className="lg:col-span-1">
@@ -208,27 +176,27 @@ export const Footer = () => {
               >
                 <Heart className="w-4 h-4 text-red-600 fill-current" />
               </motion.div>
-              <span>para los fanáticos de la F1</span>
+              <span>para 𝑀.</span>
             </div>
 
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <motion.a 
-                href="#" 
-                className="hover:text-white transition-colors duration-200"
+                href="/404" 
+                className="hover:text-white transition-colors duration-200 cursor-not-allowed"
                 whileHover={{ y: -1 }}
               >
                 Términos de Servicio
               </motion.a>
               <motion.a 
-                href="#" 
-                className="hover:text-white transition-colors duration-200"
+                href="/404" 
+                className="hover:text-white transition-colors duration-200 cursor-not-allowed"
                 whileHover={{ y: -1 }}
               >
                 Política de Privacidad
               </motion.a>
               <motion.a 
-                href="#" 
-                className="hover:text-white transition-colors duration-200"
+                href="/404" 
+                className="hover:text-white transition-colors duration-200 cursor-not-allowed"
                 whileHover={{ y: -1 }}
               >
                 Cookies
