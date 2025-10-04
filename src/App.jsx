@@ -8,6 +8,9 @@ import { Hero } from './components/sections/Hero';
 import { Drivers } from './components/sections/Drivers';
 import { Teams } from './components/sections/Teams';
 import { RaceCalendar } from './components/sections/Calendar';
+import { CalendarMobile } from './components/sections/CalendarMobile';
+import { CalendarAdaptive } from './components/sections/CalendarAdaptive';
+import { CalendarTest } from './components/sections/CalendarTest';
 import { Stats } from './components/sections/Stats';
 import { Guide } from './components/sections/Guide';
 import { Footer } from './components/sections/Footer';
@@ -32,8 +35,8 @@ const LandingPage = () => (
       {/* Teams Section */}
       <Teams />
       
-      {/* Calendar Section */}
-      <RaceCalendar />
+      {/* Adaptive Calendar Section */}
+      <CalendarAdaptive />
       
       {/* Statistics Section */}
       <Stats />

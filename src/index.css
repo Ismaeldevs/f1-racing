@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
 }
 
 .font-racing {
@@ -129,5 +128,106 @@ a:focus-visible {
 @media (max-width: 640px) {
   .text-responsive {
     font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+  
+  /* Reduce motion for mobile performance */
+  .reduce-motion {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Disable complex animations on mobile */
+  .racing-stripes {
+    animation: none;
+    background: rgba(220, 38, 38, 0.1);
+  }
+  
+  /* Simpler glow effects for mobile */
+  .glow-red {
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.2);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+  }
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Touch targets for mobile */
+@media (max-width: 768px) {
+  button, 
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better tap targets */
+  .tap-target {
+    padding: 12px;
+    margin: 4px;
+  }
+  
+  /* Prevent zoom on inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Smooth scrolling container */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-optimized cards */
+@media (max-width: 640px) {
+  .mobile-card {
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px 0;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  .mobile-text-xs {
+    font-size: 0.625rem;
+    line-height: 0.875rem;
   }
 }
